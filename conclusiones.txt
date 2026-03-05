@@ -1,0 +1,13 @@
+CONCLUSIONES DEL EJERCICIO
+
+En este ejercicio se realizaron pruebas automáticas a los servicios de registro (Signup) y autenticación (Login) de la API de Demoblaze utilizando el framework Karate para pruebas de servicios REST.
+
+Durante el desarrollo del ejercicio se identificaron las entradas necesarias para cada servicio, principalmente el username y el password que se envían en formato JSON dentro de las peticiones POST hacia los endpoints correspondientes.
+
+Se probaron cuatro escenarios principales: la creación de un nuevo usuario, el intento de registrar un usuario ya existente, el login con credenciales correctas y el login con credenciales incorrectas. Esto permitió validar tanto el funcionamiento correcto del sistema como el manejo de errores cuando las credenciales no son válidas o el usuario ya existe.
+
+Un hallazgo importante fue que el servicio de signup devuelve una respuesta vacía ("") cuando el registro es exitoso, mientras que en los casos de error devuelve un objeto JSON con un mensaje indicando el problema. En el caso del login exitoso, el servicio devuelve un token de autenticación que confirma que el usuario fue validado correctamente.
+
+También se observó que la API responde con código HTTP 200 incluso cuando ocurre un error de autenticación, por lo que es necesario validar el contenido de la respuesta para identificar si la operación fue exitosa o no.
+
+En conclusión, el uso de Karate facilita mucho la automatización de pruebas de APIs REST, ya que permite definir los escenarios de prueba de forma clara y sencilla, reutilizar datos de entrada mediante archivos JSON y validar fácilmente las respuestas del servicio.
